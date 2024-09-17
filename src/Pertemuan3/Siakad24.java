@@ -7,7 +7,8 @@ public class Siakad24 {
       Scanner sc = new Scanner (System.in);
          String nama,nim,kelas;
          byte absen;
-         double nilaiKuis,nilaiTugas,nilaiUjian,Nilai-Akhir;
+         double nilaiKuis,nilaiTugas,nilaiUTS,nilaiUAS,nilaiAkhir;
+         float bobotNilaiKuis = 20 / 100f,bobotNilaiTugas = 15 / 100f,bobotNilaiUTS = 30 / 100f,bobotNilaiUAS = 35 / 100f;
 
             System.out.print("Masukkan nama: ");
             nama = sc.nextLine();
@@ -21,13 +22,15 @@ public class Siakad24 {
             nilaiKuis = sc.nextDouble();
             System.out.print("Masukkan nilai tugas: ");
             nilaiTugas = sc.nextDouble();
-            System.out.print("Masukkan nilai ujian: ");
-            nilaiUjian = sc.nextDouble();
+            System.out.print("Masukkan nilai UTS: ");
+            nilaiUTS = sc.nextDouble();
+            System.out.print("Masukkan nilai UAS: ");
+            nilaiUAS = sc.nextDouble();
             
-            Nilai-Akhir = (nilaiKuis + nilaiTugas + nilaiUjian) / 3;
+            nilaiAkhir = (nilaiKuis*bobotNilaiKuis) + (nilaiTugas*bobotNilaiTugas) + (nilaiUTS*bobotNilaiUTS) + (nilaiUAS*bobotNilaiUAS);
 
             System.out.println("Nama: "+nama+ "     NIM: "+nim);
             System.out.println("Kelas: "+kelas+ "   Absen: "+absen);
-            System.out.println("Nilai Akhir: "+Nilai-Akhir);
+            System.out.println("Nilai Akhir: "+nilaiAkhir);
     }
 }
