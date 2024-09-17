@@ -20,12 +20,12 @@ public class Kafe24 {
         jmlRoti = input.nextInt();
 
         totalHrg = (hrgKopi*jmlKopi)+(hrgTeh*jmlTeh)+(hrgRoti*jmlRoti);
+        byte totalByte = (byte) totalHrg;
         nominalByr = totalHrg-(diskon*totalHrg);
-        int nominalInt = (int) nominalByr;
 
         System.out.println("Keanggotaan pelanggan: "+keanggotaan);
         System.out.println("Item pembelian: "+jmlKopi+" kopi, "+jmlTeh+" teh, "+jmlRoti+" roti");
+        System.out.println("Total harga (byte) : "+totalByte);
         System.out.println("Nominal bayar: "+nominalByr);
-        System.out.println("Nominal bayar (int): "+nominalInt);
     }
 }
