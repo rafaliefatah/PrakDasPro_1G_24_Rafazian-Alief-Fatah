@@ -7,7 +7,7 @@ public class Kafe24 {
         Scanner input = new Scanner(System.in);
         boolean keanggotaan;
         int jmlKopi,jmlTeh,jmlRoti;
-        float diskon = 10/100f;
+        float diskon = 10/100;
         double hrgKopi = 12000.0,hrgTeh = 7000.0,hrgRoti = 20000.0,nominalByr,totalHrg;
 
         System.out.print("Masukkan keanggotaan (true/false): ");
