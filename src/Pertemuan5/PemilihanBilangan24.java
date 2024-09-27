@@ -11,10 +11,8 @@ public class PemilihanBilangan24 {
         System.out.print("Masukkan sebuah angka: ");
         angka = sc.nextInt();
 
-        if(angka % 2 == 0){
-            System.out.println("Angka "+angka+" termasuk angka genap");
-        }else{
-            System.out.println("Angka "+angka+" termasuk angka ganjil");
-        }
+        String hasil;
+        hasil = (angka % 2 == 0) ? "bilangan genap" : "bilangan ganjil";
+        System.out.println(angka+" adalah "+hasil);
     }
 }
