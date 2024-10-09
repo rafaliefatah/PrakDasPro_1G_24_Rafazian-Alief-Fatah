@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Pemilihan2Percobaan224 {
     public static void main(String[] args) {
         Scanner input24 = new Scanner (System.in);
-        String member;
+        String member,qris;
         int pilihan_menu;
         double diskon,harga,total_bayar;
 
@@ -21,6 +21,8 @@ public class Pemilihan2Percobaan224 {
         input24.nextLine();
         System.out.print("Apakah anda punya member(y/n)? = ");
         member = input24.nextLine();
+        System.out.print("Apakah anda membayar dengan qris(y/n)? = ");
+        qris = input24.nextLine();
         System.out.println("-----------------------------------------");
 
         if (member.equalsIgnoreCase("y")) {
@@ -40,6 +42,9 @@ public class Pemilihan2Percobaan224 {
                 return;
             }
             total_bayar = harga - (harga*diskon);
+            if (qris.equalsIgnoreCase("y")) {
+                total_bayar = total_bayar - 1000;
+            }
             System.out.println("Total bayar setelah diskon = "+total_bayar);
 
         } else if (member.equalsIgnoreCase("n")){
@@ -57,8 +62,11 @@ public class Pemilihan2Percobaan224 {
                 return;
             }
             total_bayar = harga;
+            if (qris.equalsIgnoreCase("y")) {
+                total_bayar = total_bayar - 1000;
+            }
             System.out.println("Total bayar = "+total_bayar);
-            
+
         } else {
             System.out.println("Member tidak valid");
         }
