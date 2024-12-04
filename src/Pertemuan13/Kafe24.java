@@ -3,15 +3,8 @@ package Pertemuan13;
 import java.util.Scanner;
 
 public class Kafe24 {
-    public static void Menu(String namaPelanggan,boolean isMember,String kodePromo){
+    public static void Menu(String namaPelanggan,boolean isMember){
         System.out.println("Selamat datang, "+namaPelanggan);
-        if (kodePromo.equalsIgnoreCase("diskon50")) {
-            System.out.println("Diskon 50%");
-        } else if (kodePromo.equalsIgnoreCase("diskon30")) {
-            System.out.println("Diskon 30%");
-        } else {
-           System.out.println("Invalid"); 
-        }
 
         if (isMember) {
             System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
@@ -26,21 +19,43 @@ public class Kafe24 {
         System.out.println("===========================");
         System.out.println("Silahkan pilih menu yang Anda inginkan");
     }
-    public static int hitungTotalHarga24(int pilihanMenu,int banyakItem){
+    public static int hitungTotalHarga24(int pilihanMenu,int banyakItem,String kodePromo){
         int hargaItem[] = {15000,20000,22000,12000,10000,18000};
         int hargaTotal = hargaItem[pilihanMenu-1]*banyakItem;
+        if (kodePromo.equalsIgnoreCase("diskon50")) {
+            System.out.println("Diskon 50%");
+            hargaTotal = hargaTotal - (int) (hargaTotal*0.5);
+        } else if (kodePromo.equalsIgnoreCase("diskon30")) {
+            System.out.println("Diskon 30%");
+            hargaTotal = hargaTotal - (int) (hargaTotal*0.3);
+        } else {
+           System.out.println("Invalid");
+        }
         return hargaTotal;
     }
     public static void main(String[] args) {
         Scanner sc24 = new Scanner(System.in);
-        Menu("Andi",true,"DISKON50");
+        Menu("Andi",true);
+        boolean ulang = true;
+        int totalSeluruh = 0;
 
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc24.nextInt();
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc24.nextInt();
-
-        int totalHarga = hitungTotalHarga24(pilihanMenu, banyakItem);
-        System.out.println("Total harga untuk pesanan Anda: Rp "+totalHarga);
+        while (ulang = true) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+            int pilihanMenu = sc24.nextInt();
+            System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+            int banyakItem = sc24.nextInt();
+            sc24.nextLine();
+    
+            int totalHarga = hitungTotalHarga24(pilihanMenu, banyakItem, "DISKON50");
+            System.out.println("Total harga untuk pesanan Anda: Rp "+totalHarga);
+            totalSeluruh+=totalHarga;
+    
+            System.out.print("Apakah anda ingin memesan lagi? (y/n): ");
+            String pesanLagi = sc24.nextLine();
+            if (pesanLagi.equalsIgnoreCase("n")) {
+                break;
+            }
+        }
+        System.out.println("\nTotal keseluruhan pesanan: "+totalSeluruh);
     }
 }
