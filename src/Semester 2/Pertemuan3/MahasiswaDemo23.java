@@ -22,6 +22,7 @@ public class MahasiswaDemo23 {
             System.out.println("------------------------------------");
         }
         for (int i = 0; i < 3; i++) {
+            System.out.println("Data Mahasiswa ke-"+(i+1));
             arrayOfMahasiswa23[i].cetakInfo();
         }
     }
