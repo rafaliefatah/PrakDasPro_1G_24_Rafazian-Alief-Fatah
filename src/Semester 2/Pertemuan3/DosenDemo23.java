@@ -29,7 +29,7 @@ public class DosenDemo23 {
 
             arrayOfDosen23[i] = new Dosen23(kode, nama, jenisKelamin, usia);
         }
-        
+
         int i=0;
         for (Dosen23 output : arrayOfDosen23) {
             System.out.println("Data Dosen ke-"+(i+1));
@@ -45,5 +45,13 @@ public class DosenDemo23 {
             System.out.println("------------------------------------");
             i++;
         }
+
+        DataDosen23 dataDosen23 = new DataDosen23(arrayOfDosen23);
+        System.out.println();
+        dataDosen23.dataSemuaDosen(arrayOfDosen23);
+        dataDosen23.jumlahDosenPerJenisKelamin(arrayOfDosen23);
+        dataDosen23.rerataUsiaDosenPerJenisKelamin(arrayOfDosen23);
+        dataDosen23.infoDosenPalingTua(arrayOfDosen23);
+        dataDosen23.infoDosenPalingMuda(arrayOfDosen23);
     }
 }
