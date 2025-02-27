@@ -21,6 +21,7 @@ public class MahasiswaDemo23 {
             arrayOfMahasiswa23[i].ipk = Float.parseFloat(dummy);
             System.out.println("------------------------------------");
         }
+        
         for (int i = 0; i < 3; i++) {
             System.out.println("Data Mahasiswa ke-"+(i+1));
             arrayOfMahasiswa23[i].cetakInfo();
