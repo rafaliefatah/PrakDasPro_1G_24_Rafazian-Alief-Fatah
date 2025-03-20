@@ -8,6 +8,7 @@ public class MahasiswaBerprestasi23 {
     void tambah(Mahasiswa23 m) {
         if (idx<listMhs.length) {
             listMhs[idx] = m;
+            System.out.println("Masukkan data mahasiswa ke-"+(idx+1));
             System.out.print("Masukkan NIM mahasiswa: ");
             m.nim = sc23.nextLine();
             System.out.print("Masukkan nama mahasiswa: ");
@@ -40,6 +41,20 @@ public class MahasiswaBerprestasi23 {
                     listMhs[j-1] = tmp;
                 }
             }
+        }
+    }
+
+    void selectionSort() {
+        for (int i = 0; i < listMhs.length-1; i++) {
+            int idxMin=i;
+            for (int j = i+1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk<listMhs[idxMin].ipk) {
+                    idxMin=j;
+                }
+            }
+            Mahasiswa23 tmp = listMhs[idxMin];
+            listMhs[idxMin] = listMhs[i];
+            listMhs[i] = tmp;
         }
     }
 }
