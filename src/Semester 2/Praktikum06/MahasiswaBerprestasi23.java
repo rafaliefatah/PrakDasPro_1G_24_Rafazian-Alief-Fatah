@@ -1,10 +1,23 @@
+import java.util.Scanner;
+
 public class MahasiswaBerprestasi23 {
+    Scanner sc23 = new Scanner(System.in);
     Mahasiswa23 listMhs[] = new Mahasiswa23[5];
     int idx;
 
     void tambah(Mahasiswa23 m) {
         if (idx<listMhs.length) {
             listMhs[idx] = m;
+            System.out.print("Masukkan NIM mahasiswa: ");
+            m.nim = sc23.nextLine();
+            System.out.print("Masukkan nama mahasiswa: ");
+            m.nama = sc23.nextLine();
+            System.out.print("Masukkan kelas mahasiswa: ");
+            m.kelas = sc23.nextLine();
+            System.out.print("Masukkan IPK mahasiswa: ");
+            m.ipk = sc23.nextDouble();
+            sc23.nextLine();
+            System.out.println("-------------------------");
             idx++;
         } else {
             System.out.println("Data sudah penuh");
