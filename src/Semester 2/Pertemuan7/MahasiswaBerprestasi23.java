@@ -21,15 +21,30 @@ public class MahasiswaBerprestasi23 {
         }
     }
 
-    int sequentialSearching(double cari) {
-        int posisi = -1;
-        for (int i = 0; i < listMhs.length; i++) {
-            if (listMhs[i].ipk == cari) {
-                posisi=i;
-                break;
+    // int sequentialSearching(double cari) {
+    //     int posisi = -1;
+    //     for (int i = 0; i < listMhs.length; i++) {
+    //         if (listMhs[i].ipk == cari) {
+    //             posisi=i;
+    //             break;
+    //         }
+    //     }
+    //     return posisi;
+    // }
+
+    int findBinarySearch(double cari, int left, int right) {
+        int mid;
+        if (right>=left) {
+            mid = (left+right)/2;
+            if (cari == listMhs[mid].ipk) {
+                return mid;
+            } else if (cari < listMhs[mid].ipk) {
+                return findBinarySearch(cari, left, mid-1);
+            } else {
+                return findBinarySearch(cari, mid+1, right);
             }
         }
-        return posisi;
+        return -1;
     }
 
     void tampilPosisi(double x, int pos) {
