@@ -1,7 +1,7 @@
 package Jobsheet9;
 public class StackTugasMahasiswa23 {
     Mahasiswa23[] stack;
-    int top,size;
+    int top,size,tugas=0;
 
     public StackTugasMahasiswa23(int size) {
         this.size=size;
@@ -29,6 +29,7 @@ public class StackTugasMahasiswa23 {
         if (!isFull()) {
             top++;
             stack[top] = mhs;
+            tugas++;
         } else {
             System.out.println("Stack sudah penuh! Tidak bisa menambahkan tugas lagi");
         }
@@ -54,8 +55,21 @@ public class StackTugasMahasiswa23 {
         }
     }
 
+    public Mahasiswa23 peekTerbawah() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong! Tidak ada yang mengumpulkan tugas");
+            return null;
+        }
+    }
+
+    public int banyakTugas() {
+        return tugas;
+    }
+
     public void print() {
-        for (int i = 0; i <= top; i++) {
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama+"\t"+stack[i].nim+"\t"+stack[i].kelas);
         }
     }
