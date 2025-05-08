@@ -28,9 +28,19 @@ public class QueueMain23 {
                 case 1:
                     System.out.print("Masukkan data baru: ");
                     int dataMasuk = sc23.nextInt();
+                    if (Q.isFull()) {
+                        pilih=0;
+                        System.out.println("Queue Overflow");
+                        break;
+                    }
                     Q.Enqueue(dataMasuk);
                     break;
                 case 2:
+                    if (Q.isEmpty()) {
+                        pilih=0;
+                        System.out.println("Queue Underflow");
+                        break;
+                    }
                     int dataKeluar = Q.Dequeue();
                     if (dataKeluar!=0) {
                         System.out.println("Data yang dikeluarkan: "+dataKeluar);
