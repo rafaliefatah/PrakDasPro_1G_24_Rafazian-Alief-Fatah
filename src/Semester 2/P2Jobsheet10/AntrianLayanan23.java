@@ -86,14 +86,4 @@ public class AntrianLayanan23 {
     public int getJumlahAntrian() {
         return size;
     }
-
-    public void LihatAkhir() {
-        if (!isEmpty()) {
-            System.out.println("Mahasiswa terdepan: ");
-            System.out.println("NIM - NAMA - PRODI - KELAS: ");
-            data[rear].tampilkanData();
-        } else {
-            System.out.println("Antrian kosong");
-        }
-    }
 }

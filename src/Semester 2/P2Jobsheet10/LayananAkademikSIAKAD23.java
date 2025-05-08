@@ -49,9 +49,6 @@ public class LayananAkademikSIAKAD23 {
                 case 5:
                     System.out.println("Jumlah dalan antrian: "+antrian.getJumlahAntrian());
                     break;
-                case 6:
-                    antrian.LihatAkhir();
-                    break;
                 case 0:
                     System.out.println("Terima kasih");
                     break;
