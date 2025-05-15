@@ -22,5 +22,15 @@ public class SLLMain23 {
             sll.addLast(mhs);
             sll.print();
         }
+
+        System.out.println("Data index 1: ");
+        sll.getData(1);
+        System.out.println("Data mahasiswa Bimon berada pada index: "+sll.indexOf("bimon"));
+        System.out.println();
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
+        sll.print();
     }
 }
