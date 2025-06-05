@@ -22,4 +22,23 @@ public class BinaryTreeArray23 {
             }
         }
     }
+
+    void add(Mahasiswa23 mahasiswa) {
+        if (idxLast < dataMahasiswa.length-1) {
+            dataMahasiswa[idxLast] = mahasiswa;
+            idxLast++;
+        } else {
+            System.out.println("Array sudah penuh");
+        }
+    }
+
+    void traversePreOrder(int idxStart) {
+        if (idxStart <= idxLast) {
+            if (dataMahasiswa[idxStart] != null) {
+                traverseInOrder(2*idxStart+1);
+                dataMahasiswa[idxStart].tampilInformasi();
+                traverseInOrder(2*idxStart+2);
+            }
+        }
+    }
 }

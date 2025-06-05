@@ -13,10 +13,15 @@ public class BinaryTreeArrayMain23 {
         Mahasiswa23 mhs6 = new Mahasiswa23("244160205", "Ehsan", "D", 3.61);
         Mahasiswa23 mhs7 = new Mahasiswa23("244160170", "Fizi", "B", 3.86);
 
-        Mahasiswa23[] dataMahasiswa = {mhs1,mhs2,mhs3,mhs4,mhs5,mhs6,mhs7,null,null,null};
-        int idxLast=6;
-        bta.populateData(dataMahasiswa, idxLast);
-        System.out.println("\nInOrder Transversal Mahasiswa: ");
-        bta.traverseInOrder(0);
+        bta.add(mhs1);
+        bta.add(mhs2);
+        bta.add(mhs3);
+        bta.add(mhs4);
+        bta.add(mhs5);
+        bta.add(mhs6);
+        bta.add(mhs7);
+
+        System.out.println("\nPreOrder Transversal Mahasiswa: ");
+        bta.traversePreOrder(0);
     }
 }
