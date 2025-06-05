@@ -179,5 +179,29 @@ public class BinaryTree23 {
         return current;
     }
 
-    
+    public void cariMinIPK() {
+        Node23 current = root;
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        } else {
+            while (current.left != null) {
+                current = current.left;
+            }
+        }
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        Node23 current = root;
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        } else {
+            while (current.right != null) {
+                current = current.right;
+            }
+        }
+        current.mahasiswa.tampilInformasi();
+    }
 }
