@@ -204,4 +204,18 @@ public class BinaryTree23 {
         }
         current.mahasiswa.tampilInformasi();
     }
+
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        prosesTampilMhsIPKdiAtas(root, ipkBatas);
+    }
+
+    public void prosesTampilMhsIPKdiAtas(Node23 current, double ipkBatas) {
+        if (current != null) {
+            prosesTampilMhsIPKdiAtas(current.left, ipkBatas);
+            if (ipkBatas < current.mahasiswa.ipk) {
+                current.mahasiswa.tampilInformasi();
+            }
+            prosesTampilMhsIPKdiAtas(current.right, ipkBatas);
+        }
+    }
 }
