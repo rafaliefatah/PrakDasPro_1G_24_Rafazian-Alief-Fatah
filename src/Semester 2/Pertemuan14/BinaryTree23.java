@@ -161,4 +161,23 @@ public class BinaryTree23 {
             }
         }
     }
+
+    public void addRekursif(Mahasiswa23 mahasiswa) {
+        root = prosesRekursif(root, mahasiswa);
+    }
+
+    public Node23 prosesRekursif(Node23 current, Mahasiswa23 mahasiswa) {
+        if (current == null) {
+            return new Node23(mahasiswa);
+        } else {
+            if (mahasiswa.ipk < current.mahasiswa.ipk) {
+                current.left = prosesRekursif(current.left, mahasiswa);
+            } else {
+                current.right = prosesRekursif(current.right, mahasiswa);
+            }
+        }
+        return current;
+    }
+
+    
 }
