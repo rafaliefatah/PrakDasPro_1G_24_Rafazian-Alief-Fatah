@@ -1,5 +1,6 @@
 package Praktikum14;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DemoArrayList23 {
     public static void main(String[] args) {
@@ -28,6 +29,16 @@ public class DemoArrayList23 {
 
         customers.addAll(newCustomers);
         
+        ArrayList<String> daftarSiswa = new ArrayList<>();
+        daftarSiswa.add("Zainab");
+        daftarSiswa.add("Andi");
+        daftarSiswa.add("Rara");
+        Collections.sort(daftarSiswa);
+        System.out.println(daftarSiswa);
+        
+        customers.sort((c1, c2) -> c1.name.compareTo(c2.name));
+        System.out.println(customers);
+
         for (Customer23 cust : customers) {
             System.out.println(cust.toString());
         }
