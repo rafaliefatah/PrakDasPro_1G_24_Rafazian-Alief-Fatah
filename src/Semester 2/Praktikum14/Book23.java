@@ -1,5 +1,4 @@
 package Praktikum14;
-
 public class Book23 {
     public String isbn, title;
 
