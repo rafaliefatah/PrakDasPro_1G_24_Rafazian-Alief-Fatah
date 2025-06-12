@@ -1,5 +1,4 @@
 package Praktikum14;
-
 public class Customer23 {
     public int id;
     public String name;
